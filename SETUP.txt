@@ -49,13 +49,24 @@ ODDFISH MEDIA — SEO AUDIT TOOL SETUP
    https://resend.com/domains
    Follow their DNS setup (add SPF, DKIM, DMARC records)
 
-6. WHAT EACH SERVICE DOES
-   - Anthropic: AI-generated executive summary at the top of each report
-   - Resend: Sends you an email notification with lead details when someone submits an audit
-   - DataForSEO: Keyword rankings, organic traffic estimates, Google Business Profile data
-   - All are optional — the tool works without them but those sections will show warnings
+6. WHAT EACH SERVICE DOES & WHAT HAPPENS WITHOUT IT
 
-7. COSTS
-   - Anthropic: ~$0.01-0.03 per audit (one Claude Sonnet call)
-   - Resend: Free tier = 3,000 emails/month
-   - DataForSEO: Pay-as-you-go, ~$0.02-0.05 per audit (3 API calls)
+   ANTHROPIC (optional)
+   - Generates the AI executive summary paragraph at the top of each report
+   - Without it: The audit runs fine, you just won't see the AI summary section
+   - Cost: ~$0.01-0.03 per audit
+
+   RESEND (optional)
+   - Sends you an email with the lead's details every time someone runs an audit
+   - Without it: Audits still work, you just won't get email notifications
+   - Cost: Free tier = 3,000 emails/month
+
+   DATAFORSEO (optional but recommended)
+   - Powers keyword rankings, organic traffic estimates, and Google Business Profile data
+   - Without it: Those sections show a warning instead of data. The rest of the audit
+     (meta tags, headings, images, links, security, speed, etc.) works perfectly
+   - Cost: Pay-as-you-go, ~$0.02-0.05 per audit (3 API calls)
+
+   MINIMUM SETUP: You can run the tool with zero API keys. It will still crawl the
+   site and check 40+ things (meta tags, headings, images, links, security, mobile,
+   structured data, etc.). Add keys later as needed.
