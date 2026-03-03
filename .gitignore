@@ -30,9 +30,6 @@ yarn-error.log*
 .env.*
 .env*.local
 
-# report data
-/data/reports/
-
 # vercel
 .vercel
 

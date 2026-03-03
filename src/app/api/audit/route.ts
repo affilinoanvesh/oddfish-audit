@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { leadFormSchema } from '@/lib/schemas';
 import { runAudit } from '@/lib/analyzer';
-import { saveReport, getReportByUrl } from '@/lib/store';
+import { saveReport } from '@/lib/store';
 import { sendLeadEmail } from '@/lib/email';
 
 export async function POST(request: Request) {
@@ -17,20 +17,6 @@ export async function POST(request: Request) {
     }
 
     const { name, email, website, company, businessName, businessLocation } = parsed.data;
-
-    // Check for a cached report for this URL (within 7 days)
-    const cached = getReportByUrl(website);
-    if (cached) {
-      // Update lead fields to current requester
-      const report = { ...cached, name, email, company, businessName, businessLocation };
-
-      // Still send lead email for the new requester
-      sendLeadEmail(report).catch((err) => {
-        console.error('Failed to send lead email:', err);
-      });
-
-      return NextResponse.json(report);
-    }
 
     const report = await runAudit({ url: website, name, email, company, businessName, businessLocation });
     saveReport(report);
