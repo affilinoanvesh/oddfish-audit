@@ -15,8 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Free SEO Audit — Oddfish Media",
-  description: "Get a comprehensive SEO audit of your website in seconds. Analyze meta tags, performance, content, security, and more.",
+  title: "Free Website Audit — Oddfish Media",
+  description: "Get a comprehensive website audit in seconds. Analyze meta tags, performance, content, security, and more.",
 };
 
 export default function RootLayout({

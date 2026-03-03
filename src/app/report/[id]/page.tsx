@@ -317,7 +317,7 @@ export default function ReportPage({ params }: { params: { id: string } }) {
           <div className="flex flex-col md:flex-row items-center gap-10">
             <DonutChart score={report.overallScore} size={220} strokeWidth={14} label={`Grade ${report.overallGrade}`} />
             <div className="flex-1 text-center md:text-left">
-              <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">SEO Audit Report</h1>
+              <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">Website Audit Report</h1>
               <p className="text-[#a1a1aa] font-mono text-sm mb-1">{report.url}</p>
               <p className="text-xs text-[#71717a] mb-6">
                 {new Date(report.createdAt).toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })}

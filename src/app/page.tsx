@@ -193,7 +193,7 @@ export default function Home() {
     <div className="min-h-screen flex items-center justify-center px-4 py-8">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="w-full max-w-lg">
         <div className="bg-[#18181b] border border-[#27272a] rounded-2xl p-8 md:p-10">
-          <h1 className="text-2xl md:text-3xl font-bold text-white mb-2 tracking-tight">Free SEO Audit</h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-white mb-2 tracking-tight">Free Website Audit</h1>
           <p className="text-sm text-[#a1a1aa] mb-1">Get a comprehensive report of your website&apos;s SEO health</p>
           <p className="text-xs text-[#71717a] mb-6">60+ checks across 12 categories — results in ~20 seconds</p>
           <form onSubmit={handleSubmit} className="space-y-4">

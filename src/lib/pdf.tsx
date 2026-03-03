@@ -63,7 +63,7 @@ export function AuditPdfDocument({ report }: { report: AuditReport }) {
     <Document>
       {/* Cover page */}
       <Page size="A4" style={styles.coverPage}>
-        <Text style={styles.title}>SEO Audit Report</Text>
+        <Text style={styles.title}>Website Audit Report</Text>
         <Text style={styles.url}>{report.url}</Text>
         <Text style={styles.meta}>Prepared for {report.name} • {new Date(report.createdAt).toLocaleDateString()}</Text>
 
