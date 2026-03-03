@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { DM_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  variable: "--font-inter",
 });
 
 const geistMono = localFont({
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${dmSans.variable} ${geistMono.variable} font-sans antialiased bg-[#09090b] text-[#fafafa] min-h-screen`}
+        className={`${inter.variable} ${geistMono.variable} font-sans antialiased bg-[#09090b] text-[#fafafa] min-h-screen`}
       >
         {children}
       </body>
