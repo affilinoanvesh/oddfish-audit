@@ -354,6 +354,32 @@ export default function ReportPage({ params }: { params: { id: string } }) {
           </div>
         </motion.div>
 
+        {/* ─── Urgency Banner ─── */}
+        {totalIssues > 0 && (
+          <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="mb-12">
+            <div className="relative overflow-hidden bg-gradient-to-r from-[#f87171]/10 via-[#18181b] to-[#fbbf24]/10 border border-[#f87171]/20 rounded-2xl p-6 md:p-8">
+              <div className="flex flex-col md:flex-row items-center gap-5">
+                <div className="flex items-center gap-3 flex-shrink-0">
+                  <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#f87171] opacity-75" />
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-[#f87171]" />
+                  </span>
+                  <span className="text-sm font-bold text-[#f87171] uppercase tracking-wider">{totalIssues} issues found</span>
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <p className="text-lg font-bold text-white">Your website is losing traffic right now</p>
+                  <p className="text-sm text-[#a1a1aa] mt-1">
+                    We found {totalIssues} critical issues and {totalWarnings} warnings hurting your Google rankings. Every day unfixed = lost customers.
+                  </p>
+                </div>
+                <a href="mailto:hello@oddfishmedia.com.au?subject=SEO%20Audit%20Follow-up" className="flex-shrink-0 px-6 py-3 bg-[#ffd600] hover:bg-[#ffe033] text-black rounded-xl font-bold text-sm transition-all hover:shadow-lg hover:shadow-[#ffd600]/20 whitespace-nowrap">
+                  Fix My Website
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
         {/* ─── GMB — top of analysis if present ─── */}
         {report.gmbData && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }} className="mb-16" id="google-business">
