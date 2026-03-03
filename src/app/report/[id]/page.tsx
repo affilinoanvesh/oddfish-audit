@@ -307,10 +307,6 @@ export default function ReportPage({ params }: { params: { id: string } }) {
               </a>
             ))}
           </div>
-          <a href={`/api/pdf/${report.id}`} className="flex items-center gap-2 px-4 py-2 bg-[#ffd600] hover:bg-[#ffe033] text-black rounded-xl text-sm font-medium transition-colors">
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-            PDF
-          </a>
         </div>
       </nav>
 
@@ -522,10 +518,6 @@ export default function ReportPage({ params }: { params: { id: string } }) {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a href="mailto:hello@oddfishmedia.com.au?subject=SEO%20Audit%20Follow-up" className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#ffd600] hover:bg-[#ffe033] text-black rounded-xl font-semibold text-base transition-all hover:shadow-lg hover:shadow-[#ffd600]/20">
                 Book a Free Strategy Call
-              </a>
-              <a href={`/api/pdf/${report.id}`} className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#27272a] hover:bg-[#3f3f46] text-white rounded-xl font-medium transition-colors">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                Download PDF
               </a>
             </div>
             <p className="text-xs text-[#71717a] mt-5">Trusted by Australian businesses</p>
