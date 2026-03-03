@@ -1,0 +1,61 @@
+ODDFISH MEDIA — SEO AUDIT TOOL SETUP
+=====================================
+
+1. INSTALL DEPENDENCIES
+   npm install
+
+2. CREATE YOUR ENV FILE
+   Copy the template below into a file called .env.local in the root folder.
+
+   --- copy below this line ---
+
+   # Anthropic (Claude AI) — generates the AI executive summary on each report
+   # Get your key at: https://console.anthropic.com/settings/keys
+   ANTHROPIC_API_KEY=
+
+   # Resend — sends lead notification emails when someone runs an audit
+   # Get your key at: https://resend.com/api-keys
+   # NOTE: You must verify your sending domain (oddfishmedia.com.au) in Resend first
+   RESEND_API_KEY=
+
+   # DataForSEO — powers keyword rankings, search traffic, and GMB data
+   # Sign up at: https://app.dataforseo.com/register
+   # Your login is usually your email, password is on the API dashboard
+   DATAFORSEO_LOGIN=
+   DATAFORSEO_PASSWORD=
+
+   # Base URL — used for report links in emails
+   # Local development:
+   NEXT_PUBLIC_BASE_URL=http://localhost:3000
+   # Production (change to your actual domain):
+   # NEXT_PUBLIC_BASE_URL=https://audit.oddfishmedia.com.au
+
+   --- copy above this line ---
+
+3. RUN LOCALLY
+   npm run dev
+   Open http://localhost:3000
+
+4. DEPLOY TO PRODUCTION (Vercel recommended)
+   - Push to a GitHub repo
+   - Import the repo at https://vercel.com/new
+   - Add all the env variables above in Vercel project settings
+   - Set NEXT_PUBLIC_BASE_URL to your production domain
+   - Deploy
+
+5. EMAIL SETUP
+   Emails are sent from/to hello@oddfishmedia.com.au
+   You need to verify oddfishmedia.com.au as a domain in Resend:
+   https://resend.com/domains
+   Follow their DNS setup (add SPF, DKIM, DMARC records)
+
+6. WHAT EACH SERVICE DOES
+   - Anthropic: AI-generated executive summary at the top of each report
+   - Resend: Sends you an email notification with lead details when someone submits an audit
+   - DataForSEO: Keyword rankings, organic traffic estimates, Google Business Profile data
+   - All are optional — the tool works without them but those sections will show warnings
+
+7. COSTS
+   - Anthropic: ~$0.01-0.03 per audit (one Claude Sonnet call)
+   - Resend: Free tier = 3,000 emails/month
+   - DataForSEO: Pay-as-you-go, ~$0.02-0.05 per audit (3 API calls)
