@@ -99,7 +99,7 @@ export async function checkRobotsTxt(baseUrl: string): Promise<Finding[]> {
       const text = await res.text();
       const hasSitemap = text.toLowerCase().includes('sitemap');
       const hasDisallow = text.includes('Disallow');
-      const blocksAll = text.includes('Disallow: /') && !text.includes('Disallow: /\n');
+      const blocksAll = /^Disallow:\s*\/\s*$/m.test(text);
 
       findings.push({
         title: 'robots.txt',
